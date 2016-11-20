@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+    <table cellpadding="0" cellspacing="0">
+        <tr class="title">
+            <td class="nome">NOME</td>
+            <td class="telefone">TELEFONE</td>
+            <td class="placa">PLACA</td>
+            <td class="carro">CARRO</td>
+            <td class="preco">PREÇO</td>
+            <td class="data">DATA DE ENTRADA</td>
+            <td class="tbtn" title="Editar entrada">E</td>
+            <td class="tbtn" title="Remover entrada">R</td>
+            <td class="tbtn" title="Serviço Concluído"><i class="fa fa-check" aria-hidden="true"></i></td>
+        </tr>
+        {% for cliente in clientes %}
+            {% if cliente.data_saida == None %}
+                <tr id="openPay_{{ cliente.id }}">
+                    <td class="nome"><a href="#maisinfo_{{ cliente.id }}">{{ cliente.nome }}</a></td>
+                        <div id="maisinfo_{{ cliente.id }}" class="maisinfo">
+                            <div>
+                                <a href="#close" title="Close" class="close">X</a>
+                                <h2>Informações do Cliente</h2>
+                                <p>Nome: {{ cliente.nome }}</p>
+                                <p>Telefone: {{ cliente.telefone }}</p>
+                                <p>Email: {{ cliente.email }}</p>
+                                <p>CPF: {{ cliente.cpf }}</p>
+                                <p>Placa: {{ cliente.placa }}</p>
+                                <p>Carro: {{ cliente.carro }}</p>
+                                <p>Preço: {{ cliente.preco }}</p>
+                                <p>Data de Entrada: {{ cliente.data_entrada }}</p>
+                                <p>Descrição: {{ cliente.descricao }}</p>
+                                <p class="openPay_{{ cliente.id }}">Pago: {{ cliente.pago }}</p>
+                            </div>
+                        </div>
+                    <td class="telefone">{{ cliente.telefone }}</td>
+                    <td class="placa">{{ cliente.placa }}</td>
+                    <td class="carro">{{ cliente.carro }}</td>
+                    <td class="preco">R$ {{ cliente.preco }},00</td>
+                    <td class="data">{{ cliente.data_entrada }}</td>
+                    <td class="tbtn"><a title="Editar entrada" href="/editar/{{ cliente.id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                    <td class="tbtn"><a title="Remover entrada" href="/deletar/{{ cliente.id }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                    <td class="tbtn"><a title="Serviço Concluído" href="/concluir/{{ cliente.id }}"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Backup {{ date }}</title>
+</head>
+<body>
+    <h2>Backup {{ date }}</h2>
+    {% for cliente in clientes %}
+        <br>
+        <h3>Nome: {{ cliente.nome }} - {{ cliente.id }}</h3>
+        <p>Telefone: {{ cliente.telefone }}</p>
+        <p>Email: {{ cliente.email }}</p>
+        <p>CPF: {{ cliente.cpf }}</p>
+        <p>Placa: {{ cliente.placa }}</p>
+        <p>Carro: {{ cliente.carro }}</p>
+        <p>Preço: R$ {{ cliente.preco }},00</p>
+        <p>Descrição: {{ cliente.descricao }}</p>
+        <p>Pago: {{ cliente.pago }}</p>
+        <p>Data de Entrada: {{ cliente.data_entrada }}</p>
+        <p>Data de Saída: {{ cliente.data_saida }}</p>
+        <br>
+        <hr>
+    {% endfor %}
+</body>
+</html>

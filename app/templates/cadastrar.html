@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="pform">
+        <form action="{{ url_for('cadastro') }}" method="POST">
+            <div class="c1">Nome:</div><div class="c2"><input type="text" name="nome" placeholder="..."></div>
+            <div class="c1">Telefone:</div><div class="c2"><input type="text" name="telefone" placeholder="(00) 0000-0000"></div>
+            <div class="c1">Email:</div><div class="c2"><input type="text" name="email" placeholder="nome@email.com"></div>
+            <div class="c1">CPF:</div><div class="c2"><input type="text" name="cpf" placeholder="000.000.000-00"></div>
+            <div class="c1">Placa:</div><div class="c2"><input type="text" name="placa" placeholder="AAA-0000"></div>
+            <div class="c1">Carro:</div><div class="c2"><input type="text" name="carro" placeholder="..."></div>
+            <div class="c1">Preço:</div><div class="c2"><input type="text" name="preco" placeholder="1000"></div>
+            <div class="c1">Descrição:</div><div class="c2"><input type="text" name="descricao" placeholder="..."></div>
+            <div class="c1">Pago:</div>
+            <div class="c2 c2-radio">
+                <label class="control control--radio">Sim
+                    <input id="Sim" type="radio" name="pago" value="Sim">
+                    <div class="control__indicator"></div>
+                </label>
+                <label class="control control--radio">Não
+                    <input id="Nao" type="radio" name="pago" value="Não">
+                    <div class="control__indicator"></div>
+                </label>
+            </div>
+            <input type="submit" value="Cadastrar">
+        </form>
+        <form action="{{ url_for('servicos') }}">
+            <input type="submit" value="Cancelar">
+        </form>
+    </div>
+{% endblock %}

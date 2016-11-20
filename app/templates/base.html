@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>.sistema/{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome/css/font-awesome.min.css') }}">
+</head>
+<body>
+    <div class="sright">
+        <h3>Estatísticas</h3>
+        <svg width="100%" height="300px" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <g transform="translate(0,100) scale(1,-1)">
+                <rect id="month-before-last" x="0" y="0" width="33%" height="{{ afmes }}"/>
+                <rect id="last-month" x="33%" y="0" width="33%" height="{{ pfmes }}"/>
+                <rect id="actual-month" x="66%" y="0" width="33%" height="{{ fmes }}"/>
+            </g>
+        </svg>
+        <ul class="statistics">
+            <li class="month-before-last">Faturamento<br>R$ {{ safmes }},00</li>
+            <li class="last-month">Faturamento<br>R$ {{ spfmes }},00</li>
+            <li class="actual-month">Faturamento<br>R$ {{ sfmes }},00</li>
+        </ul>
+        <ul class="date">
+            <li>mês {{ ante }}</li>
+            <li>mês {{ passado }}</li>
+            <li>mês {{ atual }}</li>
+        </ul>
+        <table cellspacing="10">
+            <tr>
+                <td id="open-payment"><i class="fa fa-handshake-o fa-1x" aria-hidden="true"></i></td><td>Pagamentos em Aberto</td>
+            </tr>
+            <tr>
+                <td id="normal-view"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></td><td>Visão Normal</td>
+            </tr>
+            {% block sidebar %}
+            {% endblock %}
+        </table>
+    </div>
+	<header class="top">
+		<h3>Gerenciador de Oficina 0.1</h3>
+        <ul class="btn-top">
+            <a title="Cadastrar cliente" href="{{ url_for('cadastrar') }}"><li class="btn-top-item cliente"></li></a>
+            <a title="Serviços em Andamento" href="{{ url_for('servicos') }}"><li class="btn-top-item servicos"></li></a>
+            <a title="Serviços Completos" href="{{ url_for('concluidos') }}"><li class="btn-top-item concluidos"></li></a>
+            <a id="future" title="Configurações" href="#"><li class="btn-top-item config"></li></a>
+            <a title="Sobre" href="{{ url_for('sobre') }}"><li class="btn-top-item sobre"></li></a>
+        </ul>
+	</header>
+    <div class="content">
+    {% block content %}
+    {% endblock %}
+    </div>
+    <p class="version">v 0.1</p>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

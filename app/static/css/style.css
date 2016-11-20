@@ -1,0 +1,414 @@
+@font-face{
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Regular.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    box-sizing: border-box;
+    font-family: 'Lato', monospace;
+    color: #000000;
+    text-decoration: none;
+}
+body{
+    height: 100vh;
+}
+.top{
+    background: #95a5a6;
+    width: 74.1%;
+    height: 60px;
+    padding: 0 2%;
+    display: table;
+    float: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+}
+.top h3{
+    display: table-cell;
+    font-size: 1.5em;
+    color: #ecf0f1;
+    font-weight: 700;
+    width: 35%;
+    vertical-align: middle;
+}
+.btn-top{
+    display: table;
+    list-style: none;
+    height: 100%;
+}
+.btn-top-item{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 2% 2% 0 2%;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    float: left;
+    text-align: center;
+    transition: background-color 0.4s;
+}
+.btn-top-item:hover{
+    background-color: rgba(255,255,255,0.4);
+}
+.cliente{
+    background: url('../img/cliente.svg') center center/48px no-repeat;
+}
+.servicos{
+    background: url('../img/servicos.svg') center center/48px no-repeat;
+}
+.concluidos{
+    background: url('../img/concluidos.svg') center center/48px no-repeat;
+}
+.config{
+    background: url('../img/config.svg') center center/48px no-repeat;
+}
+.sobre{
+    background: url('../img/sobre.svg') center center/48px no-repeat;
+}
+.content{
+    width: 70%;
+    float: left;
+    margin: 2%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    padding: 1%;
+    position: absolute;
+    top: 60px;
+}
+.content table{
+    margin: auto;
+    width: 98%;
+}
+.content td{
+    line-height: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 0;
+}
+.content tr:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.content .title td{
+    text-align: center;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 2em;
+}
+.content tr:hover a{
+    font-weight: 700;
+}
+.nome, .carro{
+    text-align: left;
+    width: 20%;
+}
+.nome{
+    padding-left: 3px;
+}
+.preco, .telefone{
+    text-align: left;
+    width: 13%;
+}
+.placa{
+    text-align: center;
+    width: 11%;
+}
+.data{
+    text-align: center;
+    width: 15%;
+}
+.tbtn{
+    text-align: center;
+}
+.maisinfo{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.maisinfo:target{
+    opacity: 1;
+    pointer-events: auto;
+}
+.maisinfo > div{
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 5px;
+    background: #fff;
+}
+.close{
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.close:hover {
+    background: #aaaaaa;
+}
+.maisinfo h2{
+    font-size: 1.7em;
+    margin-bottom: 5px;
+}
+.maisinfo p{
+    margin-bottom: 4px;
+}
+.pform{
+    display: inline-block;
+}
+.pform .c1{
+    margin: 1%;
+    width: 10%;
+    float: left;
+}
+.pform .c2{
+    margin: 0;
+    height: 50px;
+    width: 80%;
+    float: left;
+}
+.pform input[type=text]{
+    padding: 5px;
+    width: 80%;
+    border: solid 3px #c9c9c9;
+    transition: border 0.3s;
+}
+.pform input[type=text]:focus,
+.pform input[type=text].focus{
+    border: solid 3px #969696;
+}
+.pform input[type=submit]{
+    background: #7f8c8d;
+    border: none;
+    color: #ffffff;
+    padding: 5px 25px;
+    text-decoration: none;
+    margin: 1% 2% 0 2%;
+    cursor: pointer;
+    float: right;
+    transition: background 0.3s;
+}
+.pform input[type=submit]:hover{
+    background: #555555;
+}
+.pform .c2-radio{
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+}
+.pform .control {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    cursor: pointer;
+}
+.pform .control input[type=radio] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.control__indicator {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #e6e6e6;
+    transition: 0.3s;
+}
+.control--radio .control__indicator {
+    border-radius: 50%;
+}
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+    background: #ccc;
+}
+.control input:checked ~ .control__indicator {
+    background: #95a5a6;
+}
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+    background: #95a5a6;
+}
+.control__indicator:after {
+    position: absolute;
+    display: none;
+    content: '';
+}
+.control input:checked ~ .control__indicator:after {
+    display: block;
+}
+.control--radio .control__indicator:after {
+    top: 7px;
+    left: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+}
+.sright{
+    background: #95a5a6;
+    width: 26%;
+    height: 100%;
+    float: right;
+    padding: 60px 1% 10px 1%;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    right: 0;
+}
+.sright h3{
+    font-size: 1.6em;
+    color: #ecf0f1;
+    font-weight: 700;
+}
+.sright svg{
+    margin-top: 20px;
+}
+.sright .date{
+    margin-top: 40px;
+    list-style: none;
+    position: relative;
+}
+.sright .date li{
+    float: left;
+    color: #ecf0f1;
+    font-weight: 700;
+    position: absolute;
+    left: 0%;
+    background: #95a5a6;
+    padding: 2px;
+    border-radius: 0 4px 0 0;
+}
+.sright .date li:nth-child(2){
+    left: 33%;
+}
+.sright .date li:nth-child(3){
+    left: 66%;
+}
+.sright rect{
+    fill: #ecf0f1;
+}
+.sright rect:hover{
+    fill: rgba(236, 240, 241, 0.9);
+}
+.statistics{
+    margin-top: -95px;
+    list-style: none;
+    height: 40px;
+    position: relative;
+    pointer-events: none;
+}
+.month-before-last{
+    position: absolute;
+    left: 0%;
+    display: none;
+    color: #ecf0f1;
+    font-weight: 700;
+    background: #95a5a6;
+    padding: 2px;
+    border-radius: 0 4px 4px 0;
+}
+.last-month{
+    position: absolute;
+    left: 33%;
+    display: none;
+    color: #ecf0f1;
+    font-weight: 700;
+    background: #95a5a6;
+    padding: 2px;
+    border-radius: 0 4px 4px 0;
+}
+.actual-month{
+    position: absolute;
+    left: 66%;
+    display: none;
+    color: #ecf0f1;
+    font-weight: 700;
+    background: #95a5a6;
+    padding: 2px;
+    border-radius: 0 4px 4px 0;
+}
+.sright table{
+    margin-top: 100px;
+}
+.sright td{
+    color: #ecf0f1;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+.sright i{
+    color: #ecf0f1;
+    cursor: pointer;
+    transition: color 1s;
+}
+.sright i:hover{
+    color: rgba(44, 62, 80,1.0);
+}
+.version{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: #ecf0f1;
+}
+@media screen and (min-width: 0px){
+    .top h3{
+        font-size: 1em;
+    }
+}
+@media screen and (min-width: 800px){
+    .top h3{
+        font-size: 1.1em;
+    }
+}
+@media screen and (min-width: 980px){
+    .top h3{
+        font-size: 1.3em;
+    }
+}
+@media screen and (min-width: 1024px){
+    .top h3{
+        font-size: 1.5em;
+    }
+}
+@media screen and (min-width: 1280px){
+    .top h3{
+        font-size: 1.8em;
+    }
+}
+@media screen and (min-width: 1366px){
+    .top h3{
+        font-size: 2em;
+    }
+}
+@media screen and (min-width: 1680px){
+    .top h3{
+        font-size: 2.7em;
+    }
+}
