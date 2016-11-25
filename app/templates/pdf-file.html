@@ -8,17 +8,17 @@
     <h2>Backup {{ date }}</h2>
     {% for cliente in clientes %}
         <br>
-        <h3>Nome: {{ cliente.nome }} - {{ cliente.id }}</h3>
-        <p>Telefone: {{ cliente.telefone }}</p>
-        <p>Email: {{ cliente.email }}</p>
-        <p>CPF: {{ cliente.cpf }}</p>
-        <p>Placa: {{ cliente.placa }}</p>
-        <p>Carro: {{ cliente.carro }}</p>
-        <p>Preço: R$ {{ cliente.preco }},00</p>
-        <p>Descrição: {{ cliente.descricao }}</p>
-        <p>Pago: {{ cliente.pago }}</p>
-        <p>Data de Entrada: {{ cliente.data_entrada }}</p>
-        <p>Data de Saída: {{ cliente.data_saida }}</p>
+        <h3>{{ lang_55 }}: {{ cliente.nome }} - {{ cliente.id }}</h3>
+        <p>{{ lang_56 }}: {{ cliente.telefone }}</p>
+        <p>{{ lang_57 }}: {{ cliente.email }}</p>
+        <p>{{ lang_58 }}: {{ cliente.cpf }}</p>
+        <p>{{ lang_59 }}: {{ cliente.placa }}</p>
+        <p>{{ lang_60 }}: {{ cliente.carro }}</p>
+        <p>{{ lang_61 }}: R$ {{ cliente.preco }},00</p>
+        <p>{{ lang_63 }}: {{ cliente.descricao }}</p>
+        <p>{{ lang_64 }}: {{ cliente.pago }}</p>
+        <p>{{ lang_62 }}: {{ cliente.data_entrada }}</p>
+        <p>{{ lang_65 }}: {{ cliente.data_saida }}</p>
         <br>
         <hr>
     {% endfor %}

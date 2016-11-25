@@ -39,4 +39,23 @@ class Servico(db.Model):
         return '<Cliente: %r>' % self.nome
 
 
+class Preferencias(db.Model):
+    __tablename__ = 'preferencias'
+
+    id = db.Column(db.Integer, primary_key=True)
+    change = db.Column(db.String)
+
+    def __init__(self, change):
+        self.change = change
+
+
 db.create_all()
+
+
+c = Preferencias.query.filter_by(id=1).first()
+
+if c is None:
+        a = '1'
+        b = Preferencias(a)
+        db.session.add(b)
+        db.session.commit()

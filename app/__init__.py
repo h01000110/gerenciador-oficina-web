@@ -16,7 +16,10 @@ from app.controllers import concluidos
 from app.controllers import concluir
 from app.controllers import deletar
 from app.controllers import editar
+from app.controllers import lang
 from app.controllers import pdf
+from app.controllers import preferencias
 from app.controllers import servicos
 from app.controllers import sobre
+from app.controllers import variaveis
 from app.models import tables

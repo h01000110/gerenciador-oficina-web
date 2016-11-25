@@ -1,3 +1,5 @@
+/* GERAL */
+
 @font-face{
     font-family: 'Lato';
     src: url('../fonts/Lato-Regular.ttf');
@@ -17,8 +19,33 @@
 body{
     height: 100vh;
 }
-.top{
+.version{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: #ecf0f1;
+}
+.geral-color{
     background: #95a5a6;
+}
+.geral-input-submit{
+    background: #7f8c8d;
+    border: none;
+    color: #ffffff;
+    padding: 5px 25px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.geral-input-submit:hover{
+    background: #555555;
+}
+
+/* FIM GERAL */
+
+/* HEADER TOP */
+
+.top{
     width: 74.1%;
     height: 60px;
     padding: 0 2%;
@@ -28,7 +55,7 @@ body{
     position: absolute;
     top: 0;
 }
-.top h3{
+.top-title{
     display: table-cell;
     font-size: 1.5em;
     color: #ecf0f1;
@@ -55,21 +82,26 @@ body{
 .btn-top-item:hover{
     background-color: rgba(255,255,255,0.4);
 }
-.cliente{
+.client{
     background: url('../img/cliente.svg') center center/48px no-repeat;
 }
-.servicos{
+.service{
     background: url('../img/servicos.svg') center center/48px no-repeat;
 }
-.concluidos{
+.complete{
     background: url('../img/concluidos.svg') center center/48px no-repeat;
 }
 .config{
     background: url('../img/config.svg') center center/48px no-repeat;
 }
-.sobre{
+.about{
     background: url('../img/sobre.svg') center center/48px no-repeat;
 }
+
+/* FIM HEADER TOP */
+
+/* PAGE - SERVIÇOS/CONCLUÍDOS */
+
 .content{
     width: 70%;
     float: left;
@@ -80,52 +112,55 @@ body{
     position: absolute;
     top: 60px;
 }
-.content table{
+.clients-list{
     margin: auto;
     width: 98%;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
-.content td{
+.clients-list td{
     line-height: 2em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 0;
+    padding: 0;
 }
-.content tr:nth-child(even){
-    background-color: rgba(0, 0, 0, 0.1);
-}
-.content .title td{
+.title-list td{
     text-align: center;
     font-size: 1em;
     font-weight: 700;
     line-height: 2em;
 }
-.content tr:hover a{
+.client-row:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.client-row:hover a{
     font-weight: 700;
 }
-.nome, .carro{
+.name, .car{
     text-align: left;
     width: 20%;
 }
-.nome{
+.name{
     padding-left: 3px;
 }
-.preco, .telefone{
+.price, .fone{
     text-align: left;
     width: 13%;
 }
-.placa{
+.plate{
     text-align: center;
     width: 11%;
 }
-.data{
+.date{
     text-align: center;
     width: 15%;
 }
-.tbtn{
+.client-row-action{
     text-align: center;
 }
-.maisinfo{
+.moreinfo{
     position: fixed;
     top: 0;
     right: 0;
@@ -139,11 +174,11 @@ body{
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
-.maisinfo:target{
+.moreinfo:target{
     opacity: 1;
     pointer-events: auto;
 }
-.maisinfo > div{
+.moreinfo > div{
     width: 400px;
     position: relative;
     margin: 10% auto;
@@ -172,64 +207,58 @@ body{
 .close:hover {
     background: #aaaaaa;
 }
-.maisinfo h2{
+.moreinfo h2{
     font-size: 1.7em;
     margin-bottom: 5px;
 }
-.maisinfo p{
+.moreinfo p{
     margin-bottom: 4px;
 }
-.pform{
+
+/* FIM PAGE - SERVIÇOS/CONCLUÍDOS */
+
+/* PAGE - CADASTRAR/EDITAR */
+
+.client-form{
     display: inline-block;
 }
-.pform .c1{
+.attribute-column{
     margin: 1%;
     width: 10%;
     float: left;
 }
-.pform .c2{
+.input-column{
     margin: 0;
     height: 50px;
     width: 80%;
     float: left;
 }
-.pform input[type=text]{
+.cf-input-text{
     padding: 5px;
     width: 80%;
     border: solid 3px #c9c9c9;
     transition: border 0.3s;
 }
-.pform input[type=text]:focus,
-.pform input[type=text].focus{
+.cf-input-text:focus{
     border: solid 3px #969696;
 }
-.pform input[type=submit]{
-    background: #7f8c8d;
-    border: none;
-    color: #ffffff;
-    padding: 5px 25px;
-    text-decoration: none;
+.cf-input-submit{
     margin: 1% 2% 0 2%;
-    cursor: pointer;
     float: right;
-    transition: background 0.3s;
 }
-.pform input[type=submit]:hover{
-    background: #555555;
-}
-.pform .c2-radio{
+.column-radio{
     display: inline-block;
     text-align: left;
     vertical-align: top;
 }
-.pform .control {
+.control {
     position: relative;
     display: block;
     margin-bottom: 15px;
     padding-left: 30px;
     cursor: pointer;
 }
-.pform .control input[type=radio] {
+.cf-input-radio {
     position: absolute;
     z-index: -1;
     opacity: 0;
@@ -273,8 +302,20 @@ body{
     border-radius: 50%;
     background: #fff;
 }
-.sright{
-    background: #95a5a6;
+.erro-valid{
+    width: 30%;
+    margin: 1%;
+    float: left;   
+}
+#erro-valid, #erro-valid2{
+    color: #c0392b;
+}
+
+/* FIM PAGE - CADASTRAR/EDITAR */
+
+/* SIDEBAR RIGHT */
+
+.sidebar-right{
     width: 26%;
     height: 100%;
     float: right;
@@ -283,42 +324,41 @@ body{
     position: absolute;
     right: 0;
 }
-.sright h3{
+.sr-title{
     font-size: 1.6em;
     color: #ecf0f1;
     font-weight: 700;
 }
-.sright svg{
+.sr-chart{
     margin-top: 20px;
 }
-.sright .date{
+.sr-date{
     margin-top: 40px;
     list-style: none;
     position: relative;
 }
-.sright .date li{
+.sr-date li{
     float: left;
     color: #ecf0f1;
     font-weight: 700;
     position: absolute;
     left: 0%;
-    background: #95a5a6;
     padding: 2px;
     border-radius: 0 4px 0 0;
 }
-.sright .date li:nth-child(2){
+.sr-date li:nth-child(2){
     left: 33%;
 }
-.sright .date li:nth-child(3){
+.sr-date li:nth-child(3){
     left: 66%;
 }
-.sright rect{
+.sr-chart rect{
     fill: #ecf0f1;
 }
-.sright rect:hover{
+.sr-chart rect:hover{
     fill: rgba(236, 240, 241, 0.9);
 }
-.statistics{
+.sr-statistics{
     margin-top: -95px;
     list-style: none;
     height: 40px;
@@ -331,7 +371,6 @@ body{
     display: none;
     color: #ecf0f1;
     font-weight: 700;
-    background: #95a5a6;
     padding: 2px;
     border-radius: 0 4px 4px 0;
 }
@@ -341,7 +380,6 @@ body{
     display: none;
     color: #ecf0f1;
     font-weight: 700;
-    background: #95a5a6;
     padding: 2px;
     border-radius: 0 4px 4px 0;
 }
@@ -351,64 +389,112 @@ body{
     display: none;
     color: #ecf0f1;
     font-weight: 700;
-    background: #95a5a6;
     padding: 2px;
     border-radius: 0 4px 4px 0;
 }
-.sright table{
+.sr-buttons{
     margin-top: 100px;
+    border-spacing: 10px;
+    border-collapse: separate;
 }
-.sright td{
+.sr-buttons td{
     color: #ecf0f1;
     font-weight: 700;
     font-size: 1.2em;
 }
-.sright i{
+.sr-buttons i{
     color: #ecf0f1;
     cursor: pointer;
     transition: color 1s;
 }
-.sright i:hover{
+.sr-buttons i:hover{
     color: rgba(44, 62, 80,1.0);
 }
-.version{
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    color: #ecf0f1;
+
+/* FIM SIDEBAR RIGHT */
+
+/* PREFERÊNCIAS */
+
+.pref-title{
+    font-size: 1.8em;
+    margin-bottom: 10px;
 }
+.select-stl{
+    width: 150px;
+    height: 2.3em;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    float: left;
+}
+.select-elem{       
+    height: 2.3em;
+    padding: 5px;
+    border: 0;
+    width: 150px;
+   -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.select-stl:after{
+    content:"\f103";
+    font-family: FontAwesome;
+    color: #ecf0f1;
+    padding: 6px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    background: #7f8c8d;
+    text-align: center;
+    width: 15%;
+    height: 100%;      
+    pointer-events: none;
+    box-sizing: border-box;   
+}
+.pref-submit{
+    margin-left: 1%;
+    height: 2.3em;
+}
+
+/* FIM PREFERÊNCIAS */
+
+/* RESPONSIVO */
+
 @media screen and (min-width: 0px){
-    .top h3{
+    .top-title{
         font-size: 1em;
     }
 }
 @media screen and (min-width: 800px){
-    .top h3{
+    .top-title{
         font-size: 1.1em;
     }
 }
 @media screen and (min-width: 980px){
-    .top h3{
+    .top-title{
         font-size: 1.3em;
     }
 }
 @media screen and (min-width: 1024px){
-    .top h3{
+    .top-title{
         font-size: 1.5em;
     }
 }
 @media screen and (min-width: 1280px){
-    .top h3{
+    .top-title{
         font-size: 1.8em;
     }
 }
 @media screen and (min-width: 1366px){
-    .top h3{
+    .top-title{
         font-size: 2em;
     }
 }
 @media screen and (min-width: 1680px){
-    .top h3{
+    .top-title{
         font-size: 2.7em;
     }
 }
+
+/* FIM RESPONSIVO */

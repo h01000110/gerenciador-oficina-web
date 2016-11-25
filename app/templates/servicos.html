@@ -1,45 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
-    <table cellpadding="0" cellspacing="0">
-        <tr class="title">
-            <td class="nome">NOME</td>
-            <td class="telefone">TELEFONE</td>
-            <td class="placa">PLACA</td>
-            <td class="carro">CARRO</td>
-            <td class="preco">PREÇO</td>
-            <td class="data">DATA DE ENTRADA</td>
-            <td class="tbtn" title="Editar entrada">E</td>
-            <td class="tbtn" title="Remover entrada">R</td>
-            <td class="tbtn" title="Serviço Concluído"><i class="fa fa-check" aria-hidden="true"></i></td>
+    <table class="clients-list">
+        <tr class="title-list">
+            <td class="name">{{ lang_27 }}</td>
+            <td class="fone">{{ lang_28 }}</td>
+            <td class="plate">{{ lang_29 }}</td>
+            <td class="car">{{ lang_30 }}</td>
+            <td class="price">{{ lang_31 }}</td>
+            <td class="date">{{ lang_32 }}</td>
+            <td class="client-row-action" title="{{ lang_33 }}">E</td>
+            <td class="client-row-action" title="{{ lang_34 }}">R</td>
+            <td class="client-row-action" title="{{ lang_35 }}"><i class="fa fa-check" aria-hidden="true"></i></td>
         </tr>
         {% for cliente in clientes %}
             {% if cliente.data_saida == None %}
-                <tr id="openPay_{{ cliente.id }}">
-                    <td class="nome"><a href="#maisinfo_{{ cliente.id }}">{{ cliente.nome }}</a></td>
-                        <div id="maisinfo_{{ cliente.id }}" class="maisinfo">
+                <tr id="openPay_{{ cliente.id }}" class="client-row">
+                    <td class="name"><a href="#moreinfo_{{ cliente.id }}">{{ cliente.nome }}</a></td>
+                        <div id="moreinfo_{{ cliente.id }}" class="moreinfo">
                             <div>
                                 <a href="#close" title="Close" class="close">X</a>
-                                <h2>Informações do Cliente</h2>
-                                <p>Nome: {{ cliente.nome }}</p>
-                                <p>Telefone: {{ cliente.telefone }}</p>
-                                <p>Email: {{ cliente.email }}</p>
-                                <p>CPF: {{ cliente.cpf }}</p>
-                                <p>Placa: {{ cliente.placa }}</p>
-                                <p>Carro: {{ cliente.carro }}</p>
-                                <p>Preço: {{ cliente.preco }}</p>
-                                <p>Data de Entrada: {{ cliente.data_entrada }}</p>
-                                <p>Descrição: {{ cliente.descricao }}</p>
-                                <p class="openPay_{{ cliente.id }}">Pago: {{ cliente.pago }}</p>
+                                <h2>{{ lang_36 }}</h2>
+                                <p>{{ lang_37 }}: {{ cliente.nome }}</p>
+                                <p>{{ lang_38 }}: {{ cliente.telefone }}</p>
+                                <p>{{ lang_39 }}: {{ cliente.email }}</p>
+                                <p>{{ lang_40 }}: {{ cliente.cpf }}</p>
+                                <p>{{ lang_41 }}: {{ cliente.placa }}</p>
+                                <p>{{ lang_42 }}: {{ cliente.carro }}</p>
+                                <p>{{ lang_43 }}: {{ cliente.preco }}</p>
+                                <p>{{ lang_44 }}: {{ cliente.data_entrada }}</p>
+                                <p>{{ lang_45 }}: {{ cliente.descricao }}</p>
+                                <p class="openPay_{{ cliente.id }}">{{ lang_46 }}: {{ cliente.pago }}</p>
                             </div>
                         </div>
-                    <td class="telefone">{{ cliente.telefone }}</td>
-                    <td class="placa">{{ cliente.placa }}</td>
-                    <td class="carro">{{ cliente.carro }}</td>
-                    <td class="preco">R$ {{ cliente.preco }},00</td>
-                    <td class="data">{{ cliente.data_entrada }}</td>
-                    <td class="tbtn"><a title="Editar entrada" href="/editar/{{ cliente.id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                    <td class="tbtn"><a title="Remover entrada" href="/deletar/{{ cliente.id }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-                    <td class="tbtn"><a title="Serviço Concluído" href="/concluir/{{ cliente.id }}"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>
+                    <td class="fone">{{ cliente.telefone }}</td>
+                    <td class="plate">{{ cliente.placa }}</td>
+                    <td class="car">{{ cliente.carro }}</td>
+                    <td class="price">R$ {{ cliente.preco }},00</td>
+                    <td class="date">{{ cliente.data_entrada }}</td>
+                    <td class="client-row-action"><a title="{{ lang_33 }}" href="/editar/{{ cliente.id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                    <td class="client-row-action"><a title="{{ lang_34 }}" href="/deletar/{{ cliente.id }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                    <td class="client-row-action"><a title="{{ lang_35 }}" href="/concluir/{{ cliente.id }}"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>
                 </tr>
             {% endif %}
         {% endfor %}

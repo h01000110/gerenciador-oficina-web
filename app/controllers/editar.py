@@ -1,7 +1,6 @@
 from app import app, db
 from app.models import tables
 from flask import redirect, url_for, request, render_template
-from app.controllers.estatisticas import Estatistica
 
 
 @app.route("/editar/<int:id>", methods=['GET', 'POST'])
@@ -21,6 +20,10 @@ def editar(id):
 
         if nome and telefone and email and cpf and placa and carro\
            and preco and descricao and pago:
+            for i in preco:
+                if i not in '0123456789':
+                    return redirect(url_for("servicos"))
+
             cliente.nome = nome
             cliente.telefone = telefone
             cliente.email = email
@@ -34,17 +37,4 @@ def editar(id):
             db.session.commit()
             return redirect(url_for("servicos"))
 
-    fmes = Estatistica().fatura
-    pfmes = Estatistica().pfatura
-    afmes = Estatistica().afatura
-    sfmes = Estatistica().sfatura
-    spfmes = Estatistica().spfatura
-    safmes = Estatistica().safatura
-    ante = Estatistica().ante
-    passado = Estatistica().passado
-    atual = Estatistica().atual
-
-    return render_template("editar.html", cliente=cliente, fmes=fmes,
-                           pfmes=pfmes, afmes=afmes, sfmes=sfmes,
-                           spfmes=spfmes, safmes=safmes, ante=ante,
-                           passado=passado, atual=atual)
+    return render_template("editar.html", cliente=cliente)

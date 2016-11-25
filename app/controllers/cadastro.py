@@ -18,6 +18,10 @@ def cadastro():
 
         if nome and telefone and email and cpf and placa and carro\
            and preco and descricao and pago:
+            for i in preco:
+                if i not in '0123456789':
+                    return redirect(url_for("cadastrar"))
+
             c = tables.Servico(nome, telefone, email, cpf, placa, carro,
                                preco, descricao, pago)
             db.session.add(c)

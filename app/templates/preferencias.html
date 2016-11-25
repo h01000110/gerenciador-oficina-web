@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3 class="pref-title">{{ lang_67 }}</h3>
+    <form action="{{ url_for('lang') }}" method="POST">
+        <label class="select-stl">
+            <select name="choice" class="select-elem">
+                <option>{{ lang_68 }}</option>
+                <option value="1">pt-BR</option>
+                <option value="2">en-US</option>
+            </select>
+        </label>
+        <input class="geral-input-submit pref-submit" type="submit" value="{{ lang_69 }}">
+    </form>
+{% endblock %}

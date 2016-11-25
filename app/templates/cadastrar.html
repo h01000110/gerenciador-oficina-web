@@ -1,30 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="pform">
-        <form action="{{ url_for('cadastro') }}" method="POST">
-            <div class="c1">Nome:</div><div class="c2"><input type="text" name="nome" placeholder="..."></div>
-            <div class="c1">Telefone:</div><div class="c2"><input type="text" name="telefone" placeholder="(00) 0000-0000"></div>
-            <div class="c1">Email:</div><div class="c2"><input type="text" name="email" placeholder="nome@email.com"></div>
-            <div class="c1">CPF:</div><div class="c2"><input type="text" name="cpf" placeholder="000.000.000-00"></div>
-            <div class="c1">Placa:</div><div class="c2"><input type="text" name="placa" placeholder="AAA-0000"></div>
-            <div class="c1">Carro:</div><div class="c2"><input type="text" name="carro" placeholder="..."></div>
-            <div class="c1">Preço:</div><div class="c2"><input type="text" name="preco" placeholder="1000"></div>
-            <div class="c1">Descrição:</div><div class="c2"><input type="text" name="descricao" placeholder="..."></div>
-            <div class="c1">Pago:</div>
-            <div class="c2 c2-radio">
-                <label class="control control--radio">Sim
-                    <input id="Sim" type="radio" name="pago" value="Sim">
+    <div class="client-form">
+        <form action="{{ url_for('cadastro') }}" method="POST" id="client-register-form">
+            <div class="attribute-column">{{ lang_11 }}:</div><div class="input-column"><input class="cf-input-text" type="text" name="nome" placeholder="..."></div>
+            <div class="attribute-column">{{ lang_12 }}:</div><div class="input-column"><input class="cf-input-text" type="text" name="telefone" placeholder="(00) 0000-0000"></div>
+            <div class="attribute-column">{{ lang_13 }}:</div><div class="input-column"><input class="cf-input-text" type="text" name="email" placeholder="name@mail.com"></div>
+            <div class="attribute-column">{{ lang_14 }}:</div><div class="input-column"><input class="cf-input-text" type="text" name="cpf" placeholder="000.000.000-00"></div>
+            <div class="attribute-column">{{ lang_15 }}:</div><div class="input-column"><input class="cf-input-text" type="text" name="placa" placeholder="AAA-0000"></div>
+            <div class="attribute-column">{{ lang_16 }}:</div><div class="input-column"><input class="cf-input-text" type="text" name="carro" placeholder="..."></div>
+            <div class="attribute-column">{{ lang_17 }}:</div><div class="input-column"><input class="cf-input-text" type="text" name="preco" placeholder="1000"></div>
+            <div class="attribute-column">{{ lang_18 }}:</div><div class="input-column"><input class="cf-input-text" type="text" name="descricao" placeholder="..."></div>
+            <div class="attribute-column">{{ lang_19 }}:</div>
+            <div class="input-column column-radio">
+                <label class="control control--radio">{{ lang_20 }}
+                    <input class="cf-input-radio" id="Sim" type="radio" name="pago" value="Sim">
                     <div class="control__indicator"></div>
                 </label>
-                <label class="control control--radio">Não
-                    <input id="Nao" type="radio" name="pago" value="Não">
+                <label class="control control--radio">{{ lang_21 }}
+                    <input class="cf-input-radio" id="Nao" type="radio" name="pago" value="Não">
                     <div class="control__indicator"></div>
                 </label>
             </div>
-            <input type="submit" value="Cadastrar">
+            <div class="erro-valid">
+                <p id="erro-valid" style="display: none;">{{ lang_25 }}</p>
+                <p id="erro-valid2" style="display: none;">{{ lang_26 }}</p>
+            </div>
+            <input class="geral-input-submit cf-input-submit" type="submit" value="{{ lang_22 }}">
         </form>
         <form action="{{ url_for('servicos') }}">
-            <input type="submit" value="Cancelar">
+            <input class="geral-input-submit cf-input-submit" type="submit" value="{{ lang_23 }}">
         </form>
     </div>
 {% endblock %}
