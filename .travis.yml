@@ -10,4 +10,4 @@ python:
 install: pip install -r requirements.txt
 env:
   - DEBUG = True SQLALCHEMY_DATABASE_URI = 'sqlite:///data.sqlite' SQLALCHEMY_TRACK_MODIFICATIONS = True
-script: run.py runserver
+script: python3 run.py runserver
