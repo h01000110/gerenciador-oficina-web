@@ -1,6 +1,7 @@
 # Gerenciador de Ofinica/Web
-[![version](https://img.shields.io/badge/version-v_0.0.2-blue.svg?style=flat-square)](https://h01000110.github.io/20161120/gerenciador-oficina-web)
-[![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](https://github.com/h01000110/gerenciador-oficina-web/blob/master/LICENSE)
+[![version](https://img.shields.io/badge/version-v_0.0.2-blue.svg)](https://h01000110.github.io/20161120/gerenciador-oficina-web)
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/h01000110/gerenciador-oficina-web/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/h01000110/gerenciador-oficina-web.svg?branch=master)](https://travis-ci.org/h01000110/gerenciador-oficina-web)
 
 ## Framework
 [Flask](http://flask.pocoo.org/)
