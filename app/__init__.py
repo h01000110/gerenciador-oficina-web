@@ -17,6 +17,8 @@ from app.controllers import concluir
 from app.controllers import deletar
 from app.controllers import editar
 from app.controllers import lang
+from app.controllers import mapa
+from app.controllers import marker
 from app.controllers import pdf
 from app.controllers import preferencias
 from app.controllers import servicos

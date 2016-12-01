@@ -22,6 +22,7 @@
                                 <p>{{ lang_56 }}: {{ cliente.telefone }}</p>
                                 <p>{{ lang_57 }}: {{ cliente.email }}</p>
                                 <p>{{ lang_58 }}: {{ cliente.cpf }}</p>
+                                <p>{{ lang_73 }}: {{ cliente.endereco }}</p>
                                 <p>{{ lang_59 }}: {{ cliente.placa }}</p>
                                 <p>{{ lang_60 }}: {{ cliente.carro }}</p>
                                 <p>{{ lang_61 }}: {{ cliente.preco }}</p>
@@ -43,6 +44,12 @@
     </table>
 {% endblock %}
 {% block sidebar %}
+<tr>
+    <td id="open-payment"><i class="fa fa-handshake-o fa-1x" aria-hidden="true"></i></td><td>{{ lang_9 }}</td>
+</tr>
+<tr>
+    <td id="normal-view"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></td><td>{{ lang_10 }}</td>
+</tr>
 <tr>
     <td id="pdf-list"><a href="{{ url_for('pdf') }}"><i class="fa fa-file-pdf-o fa-1x" aria-hidden="true"></i></a></td><td>{{ lang_66 }}</td>
 </tr>

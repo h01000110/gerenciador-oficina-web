@@ -27,12 +27,6 @@
             <li class="geral-color">{{ lang_8 }} {{ atual }}</li>
         </ul>
         <table class="sr-buttons">
-            <tr>
-                <td id="open-payment"><i class="fa fa-handshake-o fa-1x" aria-hidden="true"></i></td><td>{{ lang_9 }}</td>
-            </tr>
-            <tr>
-                <td id="normal-view"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></td><td>{{ lang_10 }}</td>
-            </tr>
             {% block sidebar %}
             {% endblock %}
         </table>
@@ -43,6 +37,7 @@
             <a title="{{ lang_1 }}" href="{{ url_for('cadastrar') }}"><li class="btn-top-item client"></li></a>
             <a title="{{ lang_2 }}" href="{{ url_for('servicos') }}"><li class="btn-top-item service"></li></a>
             <a title="{{ lang_3 }}" href="{{ url_for('concluidos') }}"><li class="btn-top-item complete"></li></a>
+            <a title="{{ lang_74 }}" href="{{ url_for('mapa') }}"><li class="btn-top-item mapa"></li></a>
             <a title="{{ lang_4 }}" href="{{ url_for('preferencias') }}"><li class="btn-top-item config"></li></a>
             <a title="{{ lang_5 }}" href="{{ url_for('sobre') }}"><li class="btn-top-item about"></li></a>
         </ul>
@@ -51,7 +46,7 @@
     {% block content %}
     {% endblock %}
     </div>
-    <p class="version">v 0.0.2</p>
+    <p class="version">v {{ version }}</p>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

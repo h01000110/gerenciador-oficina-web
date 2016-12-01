@@ -1,5 +1,5 @@
 # Gerenciador de Ofinica/Web
-[![version](https://img.shields.io/badge/version-v_0.0.2-blue.svg)](https://h01000110.github.io/20161120/gerenciador-oficina-web)
+[![version](https://img.shields.io/badge/version-v_0.0.3-blue.svg)](https://h01000110.github.io/20161120/gerenciador-oficina-web)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/h01000110/gerenciador-oficina-web/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/h01000110/gerenciador-oficina-web.svg?branch=master)](https://travis-ci.org/h01000110/gerenciador-oficina-web)
 
@@ -9,7 +9,7 @@
 ## Installation
 ```bash
 $ git clone https://github.com/h01000110/gerenciador-oficina-web.git  
-$ pip3 install -r requiremets.txt  
+$ pip3 install -r requirements.txt  
 ```
 
 ## Run
@@ -17,15 +17,23 @@ $ pip3 install -r requiremets.txt
 $ python3 run.py runserver
 ```
 
-## Changelog(Portuguese)
-[Gerenciador de Oficina/Web](https://h01000110.github.io/20161120/gerenciador-oficina-web)
-
 ## Features
 * Multi-View  
 * Monthly Statistics  
 * DB SQLite3  
 * Customer Backup/pdf  
 * Multi-Language - pt-BR/en-US  
+* Client Map(internet required)  
+
+## Client Map
+Follow the steps to get your Key: [GoogleMaps API](https://developers.google.com/maps/documentation/javascript/adding-a-google-map#step_3_get_an_api_key) and [Geocoding](https://developers.google.com/maps/documentation/javascript/geocoding#GetStarted);  
+Take your Key and put in the **app/templates/mapa.html**  
+```html
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+```
+
+## Changelog(Portuguese)
+[Gerenciador de Oficina/Web](https://h01000110.github.io/20161120/gerenciador-oficina-web)
 
 ## Resources Used
 [Font Awesome by Dave Gandy](http://fontawesome.io)  

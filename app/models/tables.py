@@ -10,6 +10,7 @@ class Servico(db.Model):
     telefone = db.Column(db.String)
     email = db.Column(db.String)
     cpf = db.Column(db.String)
+    endereco = db.Column(db.String)
     placa = db.Column(db.String)
     carro = db.Column(db.String)
     preco = db.Column(db.String)
@@ -18,13 +19,14 @@ class Servico(db.Model):
     data_entrada = db.Column(db.String)
     data_saida = db.Column(db.String)
 
-    def __init__(self, nome, telefone, email, cpf, placa,
+    def __init__(self, nome, telefone, email, cpf, endereco, placa,
                  carro, preco, descricao, pago, data_entrada=None,
                  data_saida=None):
         self.nome = nome
         self.telefone = telefone
         self.email = email
         self.cpf = cpf
+        self.endereco = endereco
         self.placa = placa
         self.carro = carro
         self.preco = preco

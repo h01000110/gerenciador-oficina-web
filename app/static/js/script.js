@@ -24,9 +24,10 @@ function openPayment () {
             hl.push(pay[i]);
         }
     }
+    console.log(hl);
     for (var i = 0; i < hl.length; i++) {
         var bhl = document.getElementById(hl[i].className);
-        if (hl[i].textContent == 'Pago: Não') {
+        if (hl[i].innerText == 'Pago : Não' || hl[i].innerText == 'Paid : Não') {
             bhl.style.background = 'rgba(231, 76, 60, 0.5)';
         } else {
             bhl.style.background = 'rgba(46, 204, 113, 0.5)';

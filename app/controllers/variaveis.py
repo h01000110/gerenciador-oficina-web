@@ -13,7 +13,8 @@ def variaveis():
     elif lc.change == '2':
         lang = 'app/static/lang/enUS.lang'
 
-    var = {'clientes': tables.Servico.query.all(),
+    var = {'version': '0.0.3',
+           'clientes': tables.Servico.query.all(),
            'clientes_completos': tables.Servico.query.order_by(tables.Servico
                                                                .data_saida),
            'fmes': Estatistica().fatura,
@@ -27,7 +28,7 @@ def variaveis():
            'atual': Estatistica().atual
            }
 
-    for i in range(1, 73):
+    for i in range(1, 76):
         var['lang_' + str(i)] = linecache.getline(lang, i)
 
     return var

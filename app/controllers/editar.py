@@ -12,6 +12,7 @@ def editar(id):
         telefone = request.form.get("telefone")
         email = request.form.get("email")
         cpf = request.form.get("cpf")
+        endereco = request.form.get("endereco")
         placa = request.form.get("placa")
         carro = request.form.get("carro")
         preco = request.form.get("preco")
@@ -19,7 +20,7 @@ def editar(id):
         pago = request.form.get("pago")
 
         if nome and telefone and email and cpf and placa and carro\
-           and preco and descricao and pago:
+           and endereco and preco and descricao and pago:
             for i in preco:
                 if i not in '0123456789':
                     return redirect(url_for("servicos"))
@@ -28,6 +29,7 @@ def editar(id):
             cliente.telefone = telefone
             cliente.email = email
             cliente.cpf = cpf
+            cliente.endereco = endereco
             cliente.placa = placa
             cliente.carro = carro
             cliente.preco = preco
